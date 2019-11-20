@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>3D Poetry Editor</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,width=device-width,height=device-height,target-densitydpi=device-dpi,user-scalable=no" />
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="css/font.css" type="text/css">
+    <link rel="stylesheet" href="css/main.css?v=1" type="text/css">
+    <script src="js/smoothscroll.js"></script>
+    <script src="js/vue.js"></script>
+    <script src="js/poetryApp.js"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-99974054-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+  </head>
+  <body>
+    <section id="video">
+      <youtube-embed
+        v-bind:url="url"
+        v-bind:width="width"
+        v-bind:height="height"></youtube-embed>
+    </section>
+    <section id="logo">
+      <img src="images/3dpoetrylogo_app_small.png">
+    </section>
+
+    <!-- About page -->
+    <section id="about" class="page">
+      <article>
+        <h1>About</h1>
+        <h3>What is 3D Poetry Editor?</h3>
+        <p class="col3">
+        3D Poetry Editor is a text editor for composing poems in three dimensions,
+        using three-dimensional structures, and can also be used to read and distribute
+        three-dimensional poems.
+        3D Poetry Editor allows writers to compose poems in a virtual three-dimensional
+        space. 3D Poetry Editor adds depth to the two dimensions on which lines of written
+        poetry are usually positioned. Writing in this space and connecting words, lines or
+        complete stanzas creates a three-dimensional structure that enables reading in
+        multiple directions. The reader can navigate the three-dimensional space, read the
+        poem, and explore its spatial construction.
+        </p>
+
+        <transition name="more">
+        <div id="readMore" v-if="open">
+        <h3>Poetry in Three Dimensions</h3>
+        <p class="col3">
+        How does poetry function in three dimensions? What are the formal, structural,
+        rhetoric, stylistic and poetic possibilities offered by writing in three dimensions?
+        How does the working process unfold if you can position words in a three-dimensional space,
+        and see the three-dimensional structure take shape while
+        writing? What kinds of poems are produced? And how are they different from poems
+        that are written in two dimensions? Will it result in new ways of thinking about
+        poetry?
+        <br />
+        <br />
+        For many poets the page is a 'field of composition', a two dimensional space for
+        words that can be read in different directions. Especially in the digital realm this led
+        to experiments with non-linear and multi-dimensional reading that hint at three-dimensionality.
+        Composing poetry in three dimensions does offer a new dynamic
+        'text field' in which new, unforeseen meanings can appear. The flexible, changeable
+        space of words and sentences enables a multi-sequential way of reading, and
+        emphasises space over time. This changes how readers explore a poem and make
+        sense of it.
+        </p>
+
+        <span class="quote">
+        "Using 3D Poetry Editor, I wrote couplets that explore wave-particle duality and
+        associated issues in particle physics, poetry, and philosophy. The poem draws from
+        my ongoing investigative work in quantum poetics, a theory and practice I use that
+        applies principles in theoretical physics to poetry in order to explore how physical
+        reality is assumed, imagined, and tested through language at discernible and
+        indiscernible scales of spacetime."
+        <span class="by">Amy Catanzano</span>
+        </span>
+
+        <h3>Writing 3D Poetry</h3>
+        <p class="col3">
+        In 3D Poetry Editor the writer builds three-dimensional poetic structures by writing
+        and connecting words or lines of poetry - the nodes that create networks or other
+        structures. Three different forces affect the nodes in the virtual space. These forces
+        function as compositional tools, and are somewhat similar to the fundamental forces
+        in our universe.
+                <span class="quote">
+                  "It was like collaborating with an invisible partner, who was more dancer and weaver
+                  than poet, and who would not tell me in advance what he might do next!"
+                  <span class="by">Sampurna Chattarji</span>
+                </span>
+        To ensure that the poem does not expand out of control, a gravity
+        centre pulls all the nodes towards the middle of the space. Individual nodes repel
+        each other: they only use their own space and do not overlap with others. When the
+        nodes are connected, they are brought together and pull at each other. These three
+        forces act upon each other, and create a dynamic three-dimensional constellation.
+        They decide how the poem will behave in the three-dimensional space, and
+        determine its organisation. As they do not directly control every detail, poets have to
+        allow for unexpected effects and constructions. They have to find other ways of
+        relating subject matter and form, of creating a poetic effect.
+        </p>
+        <h3>Reading 3D Poetry</h3>
+        <p class="col3">
+        The reader of a 3D-poem can navigate the virtual space in a way similar to a 3D
+        computer game, zooming in on details, or zooming out to see the entire structure.
+        The lines and words are suspended in the virtual space; large words are nearby, small
+        ones far away.
+        Some poems look like a mobile, or a three-dimensional representation
+        of molecules, while others resemble a constellation of stars. And sometimes reading a
+        poem is like travelling through space and watching words fly by. Any node can be
+        grabbed, and dragged through the space. Pulling on a piece of the poem reveals how
+        that piece is connected to others, and allows for a positioning of the lines for easier
+        reading. This changes the visual representation of the poem, but not the topology of
+        the network.
+
+                        <span class="quote">
+                          "Senses are born on the crossings of any lines."
+                          <span class="by">Maria Malinovskaya</span>
+                        </span>
+
+        Because the nodes are governed by three forces, which position them in
+        space and in relation to each other, there is in most cases no fixed or preferred
+        reading order. The poem itself is a site for discovery. Reading a 3D-poem also means
+        engaging with a fluid form, or exploring to reveal the underlying structure.
+        </p>
+
+        <span class="quote">
+        "The beauty of it lies in the fact that it forces you to really think about every line you
+        write. You can&#39;t depend on the sequence as it normally is on paper or spoken out
+        loud, so every line has to be attractive, exciting, wrongheaded or whatever enough to
+        keep the reader tempted. Time is of no importance anymore, because there is no
+        beginning or end. The reader determines how he reads the poem and when he or she
+        is done with it."
+        <span class="by">Daniel Dee</span>
+        </span>
+
+        <h3>What has been written until now?</h3>
+        <p class="col3">
+        Amy Catanzano, Adam Dickinson, Sampurna Chattarji, Maria Malinovskaya, Derek Beaulieu, Morten S&oslash;ndergaard, Mani Rao, Nils Christian Moe-Repstad, Laura Accerboni, Angela Rawlings, Jan Baeke, Jon St&aring;le Ritland, Daniel Dee, and Mamta Sagar have used 3D Poetry Editor to create poems. Their poems suggest different formal and compositional possibilities that can be explored in three dimensions. Some meticulously built networks or structures &ndash; simple or complex &ndash; that corresponded to the subject matter of their poems. For example, in Diamond Jon Stale Ritland mimics the atomic structure of a carbon atom by creating four connections to every node of the poem. Others played with the structural possibilities, allowing the reader reveal the construction through interacting with the poem. The couplets of Amy Catanzano&rsquo;s Wavicles tie two lines together, foregrounding the dual nature of light and matter as both waves and particles; there is a play of text sizes and overlapping movements, but no linear progression, no beginning or end. Some poets saw working with 3D Poetry Editor as a way to escape the confines of the static page, and embraced the dynamic form and the loosening of authorial control, gaining in the process a fresh perspective on the process of writing. Derek Beaulieu let all the lines from an English translation of Mallarm&eacute;&rsquo;s Un Coup de D&eacute;s explode in the virtual space, creating a whirling tension of recombinant text.
+      </p>
+
+        <h3>The History of 3D Poetry Editor</h3>
+        <p class="col3">
+        3D Poetry Editor evolved from BodySearches/PoetryMachine, which combined poems from Jon St&aring;le Ritland&rsquo;s BodySearches (2013) with three-dimensional software art by Dutch media artist Michiel Koelink. Successful presentations of BodySearches/PoetryMachine inspired Ritland and Koelink to develop an editor that could write in three dimensions. Prototypes were presented at various festivals, including Poetry International, where poets were invited to compose a new work using the application. Their responses, experiences and critiques were input for subsequent improvements to the application.
+        </p>
+
+        <span class="quote">
+        "The 3D Poetry Editor opens new possibilities in writing and reading poetry, and also
+        opens new room for what a poem might be. It can make you think differently about
+        poetry, as in my case, by using molecular forms, and writing poems that I otherwise
+        would not have thought of."
+        <span class="by">Jon St&aring;le Ritland</span>
+        </span>
+
+        <h3>Technology</h3>
+        <p class="col3">
+        3D Poetry Editor is developed by the Dutch media artist Michiel Koelink, the Norwegian poet Jon St&aring;le Ritland and the Portuguese programmer David Jonas. The application is created with Unity &ndash; a program for creating 3D-games. 3D Poetry Editor runs on most current platforms (Windows, Apple, Linux), and can also be embedded in websites. Poems written in 3D Poetry Editor are saved as a .3dpff file. 3D Poetry Editor is open source, and is published under a Creative Commons licence. Authors retain the copyright of the poems they write with 3D Poetry Editor.
+        <br /><br />
+        3D Poetry Editor is made possible thanks to a grant from the Dutch Foundation for Literature.
+        </p>
+      </div>
+    </transition>
+    <span id="text-credit">Text by: Arie Altena</span>
+    <div id="more-btn" v-on:click="toggle">{{ message }}</div>
+      </article>
+    </section>
+
+    <!-- Download page -->
+    <section id="download" class="page">
+      <article>
+        <h1>Download</h1>
+        <a class="btn" v-on:click="dialogOpen = !dialogOpen">Download for macOSX</a>
+        <a class="btn" href="/download/3DPoetryEditor_win.zip">Download for Windows</a>
+
+        <div id="MacDialog" v-if="dialogOpen">
+          <h4>Solving MacOSX installation issues</h4>
+          <p>Since the release MacOSX Mojave (10.14), the app gets blocked from creating the 3D poetry files and reading the configuration file that is necessary to run the program.
+          This is due to us not being (and not agreeing to be) Identified Apple Developers.
+          Fortunately, this security block is very easy to work around and you will be able to create your poems freely. The only thing you need to do is not download the app with your browser.
+          </p>
+          <p>
+          Apps downloaded from the internet with a browser get tagged as unsafe by the operating system. The workaround is to download it through a terminal application called curl. You don't need any special software to do this.
+          </p>
+          <p>
+          All you need to do is open a terminal (press Command+Space, write "terminal" and press the return key), and on the terminal window paste the following command:
+          </p>
+          <pre>
+curl http://www.3dpoetryeditor.art/download/3DPoetryEditor_mac.zip > ~/Downloads/3DPoetryEditor_mac.zip
+          </pre>
+          <p>
+          That's all you need to do. You can now close the terminal and a zip file with the app will be on your Downloads folder.
+          </p>
+        </div>
+
+        <p>
+          You can download the 3D Poetry Editor to view the poems presented at the Poetry International festival and create your own 3D poems from scratch.
+          To run the application you only need to uncompress the downloaded file and double-click the executable.
+        </p>
+        <p>
+          You can let David and Michiel guide you throught the app on a <a href="https://youtu.be/OULE3WC2kgo">simple video tutorial</a>. The video was made for the pioneer 3D poets testing the application, at the time of the video, the application was an early alpha version and it might look a bit different but the ideas and instructions are still all the same.
+        </p>
+      </article>
+    </section>
+
+    <!-- Poets page -->
+    <section id="poets" class="page">
+      <article>
+        <h1>The gravity of words</h1>
+        <p>
+          14 poets from all around the world have contributed their 3D poems for the exhibition named <i>"The gravity of words"</i> at Poetry International Festival in Rotterdam. They were first introduced to the 3D Poetry Editor in the 2016 edition of the festival and joined the project as pioneers of 3D poetry. The results of their first explorations are being exhibited in the 2017 edition of the <a href="http://www.poetryinternationalweb.net/">Poetry International Festival Rotterdam</a>.
+        </p>
+        <p>
+          Here is a list of the poems selected for the exhibition. You can download these along with the 3D Poetry Editor app and you can click the titles to view them in video:
+        </p>
+
+        <ul id="poem_list">
+          <li onclick="videoApp.url = youtube.getURL('T-bWjQTzKIw', 680); document.querySelector('#video').scrollIntoView({behavior: 'smooth'});">Lipids <span class="author">Adam Dickinson (Canada)</span></li>
+          <li onclick="videoApp.url = youtube.getURL('T-bWjQTzKIw', 1125); document.querySelector('#video').scrollIntoView({behavior: 'smooth'});">Wavicles <span class="author">Amy Catanzano (USA)</span></li>
+          <li onclick="videoApp.url = youtube.getURL('T-bWjQTzKIw', 572); document.querySelector('#video').scrollIntoView({behavior: 'smooth'});">Incision <span class="author">Sampurna Chattarji (India)</span></li>
+          <li onclick="videoApp.url = youtube.getURL('T-bWjQTzKIw', 116); document.querySelector('#video').scrollIntoView({behavior: 'smooth'});">Caimania 1 <span class="author">Maria Malinovskaya (Russia)</span></li>
+          <li onclick="videoApp.url = youtube.getURL('T-bWjQTzKIw', 300); document.querySelector('#video').scrollIntoView({behavior: 'smooth'});">Digital Solar System <span class="author">Dani&euml;l Dee (Holland)</span></li>
+          <li onclick="videoApp.url = youtube.getURL('n6eWscswC4c', 0); document.querySelector('#video').scrollIntoView({behavior: 'smooth'});">Un Coup de Des <span class="author">Derek Beaulieu (Canada)</span></li>
+          <li onclick="videoApp.url = youtube.getURL('T-bWjQTzKIw', 971); document.querySelector('#video').scrollIntoView({behavior: 'smooth'});">Unknow yourself <span class="author">Morten S&oslash;ndergaard (Denmark)</span></li>
+          <li onclick="videoApp.url = youtube.getURL('T-bWjQTzKIw', 1058); document.querySelector('#video').scrollIntoView({behavior: 'smooth'});">Untitled 1 <span class="author">Mani Rao (India)</span></li>
+          <li onclick="videoApp.url = youtube.getURL('T-bWjQTzKIw', 10); document.querySelector('#video').scrollIntoView({behavior: 'smooth'});">Alteret <span class="author">Nils Christian Moe-Repstad (Norway)</span></li>
+          <li onclick="videoApp.url = youtube.getURL('T-bWjQTzKIw', 834); document.querySelector('#video').scrollIntoView({behavior: 'smooth'});">The things that have no space <span class="author">Laura Accerboni (Italy)</span></li>
+          <li onclick="videoApp.url = youtube.getURL('T-bWjQTzKIw', 379); document.querySelector('#video').scrollIntoView({behavior: 'smooth'});">Few things happen at the appointed time <span class="author">Jan Baeke (Holland)</span></li>
+          <li onclick="videoApp.url = youtube.getURL('CO4dSY9S1QA', 0); document.querySelector('#video').scrollIntoView({behavior: 'smooth'});">SUND <span class="author">angela rawlings (Iceland/Canada)</span></li>
+          <li onclick="videoApp.url = youtube.getURL('T-bWjQTzKIw', 488); document.querySelector('#video').scrollIntoView({behavior: 'smooth'});">Hide and seek 1 <span class="author">Mamta Sagar (India)</span></li>
+          <li onclick="videoApp.url = youtube.getURL('T-bWjQTzKIw', 212); document.querySelector('#video').scrollIntoView({behavior: 'smooth'});">Diamond <span class="author">Jon St&aring;le Ritland (Norway)</span></li>
+        </ul>
+      </article>
+    </section>
+
+    <!-- Credits page -->
+    <section id="credits" class="page">
+      <article>
+        <h1>Credits</h1>
+
+        <!-- <person-item
+          v-for="item in personList"
+          v-bind:name="item.name"
+          v-bind:url="item.url"
+          v-bind:description="item.description"
+          v-bind:css="item.cssClass"
+          v-bind:key="item.id">
+        </person-item> -->
+
+        <div class="person">
+          <h2><a href="http://www.michielkoelink.net">Michiel Koelink</a></h2>
+          <p>
+            Michiel Koelink is a media artist who works with software systems, video, sound and photography, through which he demonstrates a passion for loops and simple rule-based works, often subjected to infinite changes by algorithmic structures. In the process of research and development, Koelink often collaborates with scientists and other experts. Works like <a href="http://www.michielkoelink.net/index.php/-spitzenkoerper.html">Spitzenk&ouml;rper</a> and <a href="http://www.michielkoelink.net/index.php/25-dimensions.html">2.5 Dimensions</a> show a commitment to an aesthetic visualization of science.
+          </p>
+        </div>
+        <div class="person">
+          <h2><a href="http://www.davidjonas.art">David Jonas</a></h2>
+          <p>
+            David Jonas is a computer science engineer, media artist and educator on the fields of creative coding and game development. Based in The Netherlands, David has worked with <a href="http://www.v2.nl/">V2_ Institute for the unstable media</a> and <a href="http://www.intk.com/">INTK</a> and currently works with diverse artists, museums, cultural institutions and universities. He has been nominated and received international awards for his design and development work. An artist, maker and problem solver at heart, he plays multiple musical instruments and builds custom code, bikes, cars and drones.
+          </p>
+        </div>
+        <div class="person">
+          <h2><a href="#">Jon St&aring;le Ritland</a></h2>
+          <p>
+            Jon St&aring;le Ritland is a poet and ophthalmologist from Norway. His first collection of poetry Kroppsvisitasjoner (Aschehoug, 2004) was translated to English [Body Searches] and published by Broken Dimanche Press in 2013. He has also published two more collections of poetry, Vannmerker [Watermarks] (Aschehoug, 2009), and I bane rundt en gul ball [in orbit around a yellow ball] (Olympiastadion 2014), and the essay N&aring;r det biokjemiske spr&aring;k inntar litteraturens kropp [When Biochemical Language Enters the Body of Literature] (OEI, 2009). Ritland's poems have been presented at Copenhagen Art Institute (2012), Agora, Berlin (2013), Oslo International Poetry Festival (2014), StAnza Festival i St Andrews, Scotland (2015), and Poetry International Festival Rotterdam (2016).          </p>
+        </div>
+        <div class="person">
+          <h2><a href="http://www.mikehambleton.com/">Mike Hambleton</a></h2>
+          <p>
+Mike Hambleton is a creative director and designer, working primarily on advanced user interfaces and connected devices. After 15 years based in Amsterdam as a designer and creative lead for Dutch agencies, he has lived and worked in San Francisco since 2013. Mike is a Creative Director at Native Design, a groundbreaking industrial and experience design consultancy behind key work for brands including Bowers & Wilkins, the BBC, Audi, Bentley, and HP.  He has nearly 20 years experience leading digital creative teams in the US and Europe, for design-focussed clients ranging from Apple and Philips to Gucci and Singapore Airlines, and has won multiple awards at international advertising creative shows including Cannes, the Clios and D&AD.</p>
+        </div>
+
+        <div id="sponsors">
+          This project was made possible by:
+          <a href="http://www.letterenfonds.nl/"><img src="images/fonds.png" /></a>
+          <a href="http://www.poetryinternationalweb.net/"><img src="images/pir.png" /></a>
+        </div>
+      </article>
+    </section>
+
+    <!-- Contact page -->
+    <section id="contact" class="fullpage">
+      <article>
+        <!--h1>Contact</h1-->
+          <div id="email" class="cl-effect-21"><a href="mailto:info@3dpoetryeditor.art">info@3dpoetryeditor.art</a></div>
+      </article>
+    </section>
+
+    <div id="menu_container">
+      <transition name="slide">
+        <div id="menu" v-if="open">
+          <ul>
+            <menu-item
+              v-for="item in menuList"
+              v-bind:item="item.itemName"
+              v-bind:anchor="item.anchor"
+              v-bind:key="item.id">
+            </menu-item>
+          </ul>
+        </div>
+      </transition>
+      <div id="menu_btn" v-on:click="open = !open" v-bind:class="{ change: open }">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </div>
+    </div>
+    <div class="vignette"></div>
+  </body>
+</html>
